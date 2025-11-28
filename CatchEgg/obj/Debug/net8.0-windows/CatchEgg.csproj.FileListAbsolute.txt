@@ -1,0 +1,16 @@
+D:\C#\buoith_2\CatchEgg\bin\Debug\net8.0-windows\CatchEgg.exe
+D:\C#\buoith_2\CatchEgg\bin\Debug\net8.0-windows\CatchEgg.deps.json
+D:\C#\buoith_2\CatchEgg\bin\Debug\net8.0-windows\CatchEgg.runtimeconfig.json
+D:\C#\buoith_2\CatchEgg\bin\Debug\net8.0-windows\CatchEgg.dll
+D:\C#\buoith_2\CatchEgg\bin\Debug\net8.0-windows\CatchEgg.pdb
+D:\C#\buoith_2\CatchEgg\obj\Debug\net8.0-windows\CatchEgg.Form1.resources
+D:\C#\buoith_2\CatchEgg\obj\Debug\net8.0-windows\CatchEgg.csproj.GenerateResource.cache
+D:\C#\buoith_2\CatchEgg\obj\Debug\net8.0-windows\CatchEgg.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\buoith_2\CatchEgg\obj\Debug\net8.0-windows\CatchEgg.AssemblyInfoInputs.cache
+D:\C#\buoith_2\CatchEgg\obj\Debug\net8.0-windows\CatchEgg.AssemblyInfo.cs
+D:\C#\buoith_2\CatchEgg\obj\Debug\net8.0-windows\CatchEgg.csproj.CoreCompileInputs.cache
+D:\C#\buoith_2\CatchEgg\obj\Debug\net8.0-windows\CatchEgg.dll
+D:\C#\buoith_2\CatchEgg\obj\Debug\net8.0-windows\refint\CatchEgg.dll
+D:\C#\buoith_2\CatchEgg\obj\Debug\net8.0-windows\CatchEgg.pdb
+D:\C#\buoith_2\CatchEgg\obj\Debug\net8.0-windows\CatchEgg.genruntimeconfig.cache
+D:\C#\buoith_2\CatchEgg\obj\Debug\net8.0-windows\ref\CatchEgg.dll
