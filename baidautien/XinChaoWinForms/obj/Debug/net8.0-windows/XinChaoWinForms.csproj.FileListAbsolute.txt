@@ -1,0 +1,16 @@
+D:\C#\baidautien\XinChaoWinForms\bin\Debug\net8.0-windows\XinChaoWinForms.exe
+D:\C#\baidautien\XinChaoWinForms\bin\Debug\net8.0-windows\XinChaoWinForms.deps.json
+D:\C#\baidautien\XinChaoWinForms\bin\Debug\net8.0-windows\XinChaoWinForms.runtimeconfig.json
+D:\C#\baidautien\XinChaoWinForms\bin\Debug\net8.0-windows\XinChaoWinForms.dll
+D:\C#\baidautien\XinChaoWinForms\bin\Debug\net8.0-windows\XinChaoWinForms.pdb
+D:\C#\baidautien\XinChaoWinForms\obj\Debug\net8.0-windows\Example01.Form1.resources
+D:\C#\baidautien\XinChaoWinForms\obj\Debug\net8.0-windows\XinChaoWinForms.csproj.GenerateResource.cache
+D:\C#\baidautien\XinChaoWinForms\obj\Debug\net8.0-windows\XinChaoWinForms.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\baidautien\XinChaoWinForms\obj\Debug\net8.0-windows\XinChaoWinForms.AssemblyInfoInputs.cache
+D:\C#\baidautien\XinChaoWinForms\obj\Debug\net8.0-windows\XinChaoWinForms.AssemblyInfo.cs
+D:\C#\baidautien\XinChaoWinForms\obj\Debug\net8.0-windows\XinChaoWinForms.csproj.CoreCompileInputs.cache
+D:\C#\baidautien\XinChaoWinForms\obj\Debug\net8.0-windows\XinChaoWinForms.dll
+D:\C#\baidautien\XinChaoWinForms\obj\Debug\net8.0-windows\refint\XinChaoWinForms.dll
+D:\C#\baidautien\XinChaoWinForms\obj\Debug\net8.0-windows\XinChaoWinForms.pdb
+D:\C#\baidautien\XinChaoWinForms\obj\Debug\net8.0-windows\XinChaoWinForms.genruntimeconfig.cache
+D:\C#\baidautien\XinChaoWinForms\obj\Debug\net8.0-windows\ref\XinChaoWinForms.dll
