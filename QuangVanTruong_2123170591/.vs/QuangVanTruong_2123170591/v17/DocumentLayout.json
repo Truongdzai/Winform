@@ -1,0 +1,440 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C#\\QuangVanTruong_2123170591\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai10.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai10.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\winformsapp_article.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\winformsapp_article.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\menu.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\menu.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai07.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai07.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai07.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai07.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai07.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai07.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai04.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai04.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai08.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai08.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai01.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai01.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai02.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai02.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai02.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai02.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai00.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai00.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai00.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai00.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai00.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai00.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai05.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai05.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai05.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai05.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai03.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai03.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|d:\\c#\\quangvantruong_2123170591\\baitapcsharp\\bai04.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3DE97D2A-6C8C-404F-A923-92132BE8619A}|BaiTapCSharp\\WinFormsApp_Article.csproj|solutionrelative:baitapcsharp\\bai04.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Bai04.Designer.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai04.Designer.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai04.Designer.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai04.Designer.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Bai04.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T09:08:09.167Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Bai10.Designer.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai10.Designer.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai10.Designer.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai10.Designer.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Bai10.Designer.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAIwEcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T09:16:23.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Bai10.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai10.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai10.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai10.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Bai10.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T09:15:51.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Bai10.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai10.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai10.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai10.cs [Design]",
+              "RelativeToolTip": "BaiTapCSharp\\Bai10.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T09:15:12.918Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Menu.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Menu.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Menu.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Menu.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwB0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T09:14:31.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Menu.resx",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Menu.resx",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Menu.resx",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Menu.resx",
+              "RelativeToolTip": "BaiTapCSharp\\Menu.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-12T09:09:17.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Menu.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Menu.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Menu.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Menu.cs [Design]",
+              "RelativeToolTip": "BaiTapCSharp\\Menu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T09:09:16.313Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Bai07.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai07.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai07.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai07.cs [Design]",
+              "RelativeToolTip": "BaiTapCSharp\\Bai07.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T09:09:03.328Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Bai07.Designer.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai07.Designer.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai07.Designer.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai07.Designer.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Bai07.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T09:08:59.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WinFormsApp_Article.csproj",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\WinFormsApp_Article.csproj",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\WinFormsApp_Article.csproj",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\WinFormsApp_Article.csproj",
+              "RelativeToolTip": "BaiTapCSharp\\WinFormsApp_Article.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-12T06:20:54.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Bai07.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai07.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai07.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai07.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Bai07.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T08:27:07.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Bai08.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai08.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai08.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai08.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Bai08.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwA0AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T08:27:24.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Program.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Program.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Program.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T06:33:14.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Bai01.Designer.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai01.Designer.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai01.Designer.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai01.Designer.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Bai01.Designer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwBwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T08:45:49.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Bai01.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai01.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai01.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai01.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Bai01.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwBIAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T08:25:29.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Bai01.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai01.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai01.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai01.cs [Design]",
+              "RelativeToolTip": "BaiTapCSharp\\Bai01.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T07:59:43.808Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Bai00.resx",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai00.resx",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai00.resx",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai00.resx",
+              "RelativeToolTip": "BaiTapCSharp\\Bai00.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-12T06:19:41.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Bai02.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai02.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai02.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai02.cs [Design]",
+              "RelativeToolTip": "BaiTapCSharp\\Bai02.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T08:00:29.293Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Bai02.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai02.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai02.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai02.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Bai02.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T08:25:48.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Bai00.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai00.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai00.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai00.cs [Design]",
+              "RelativeToolTip": "BaiTapCSharp\\Bai00.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T07:47:34.279Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Bai00.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai00.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai00.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai00.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Bai00.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T06:23:29.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Bai05.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai05.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai05.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai05.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Bai05.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwA0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T08:26:36.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Bai03.cs",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai03.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai03.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai03.cs",
+              "RelativeToolTip": "BaiTapCSharp\\Bai03.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAIwCQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T08:26:06.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Bai05.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai05.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai05.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai05.cs [Design]",
+              "RelativeToolTip": "BaiTapCSharp\\Bai05.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T08:15:08.361Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Bai04.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai04.cs",
+              "RelativeDocumentMoniker": "BaiTapCSharp\\Bai04.cs",
+              "ToolTip": "D:\\C#\\QuangVanTruong_2123170591\\BaiTapCSharp\\Bai04.cs [Design]",
+              "RelativeToolTip": "BaiTapCSharp\\Bai04.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T08:14:54.129Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

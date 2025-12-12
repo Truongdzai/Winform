@@ -1,0 +1,17 @@
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\bin\Debug\net8.0-windows\WinFormsApp_Article.exe
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\bin\Debug\net8.0-windows\WinFormsApp_Article.deps.json
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\bin\Debug\net8.0-windows\WinFormsApp_Article.runtimeconfig.json
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\bin\Debug\net8.0-windows\WinFormsApp_Article.dll
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\bin\Debug\net8.0-windows\WinFormsApp_Article.pdb
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\obj\Debug\net8.0-windows\WinFormsApp_Article.Form1.resources
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\obj\Debug\net8.0-windows\WinFormsApp_Article.csproj.GenerateResource.cache
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\obj\Debug\net8.0-windows\WinFormsApp_Article.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\obj\Debug\net8.0-windows\WinFormsApp_Article.AssemblyInfoInputs.cache
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\obj\Debug\net8.0-windows\WinFormsApp_Article.AssemblyInfo.cs
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\obj\Debug\net8.0-windows\WinFormsApp_Article.csproj.CoreCompileInputs.cache
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\obj\Debug\net8.0-windows\WinFormsApp_Article.sourcelink.json
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\obj\Debug\net8.0-windows\WinFormsApp_Article.dll
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\obj\Debug\net8.0-windows\refint\WinFormsApp_Article.dll
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\obj\Debug\net8.0-windows\WinFormsApp_Article.pdb
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\obj\Debug\net8.0-windows\WinFormsApp_Article.genruntimeconfig.cache
+D:\C#\QuangVanTruong_2123170591\BaiTapCSharp\obj\Debug\net8.0-windows\ref\WinFormsApp_Article.dll
