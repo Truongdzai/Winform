@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Media; // <-- 1. Thêm thư viện âm thanh
 
 namespace WinFormsApp_Article
 {
@@ -14,32 +15,41 @@ namespace WinFormsApp_Article
         System.Windows.Forms.Timer tmEgg = new System.Windows.Forms.Timer();
         System.Windows.Forms.Timer tmChicken = new System.Windows.Forms.Timer();
 
+        // --- KHAI BÁO NHẠC NỀN ---
+        // Lưu ý: File wav phải nằm cùng thư mục với file .exe (bin/Debug/...)
+        SoundPlayer bgMusic = new SoundPlayer("Nhacnengamehungtrung.wav");
+
         // Tọa độ và Tốc độ GIỎ
         int xBasket = 250;
         int yBasket = 500;
-        int xDeltaBasketBase = 20; // Tốc độ gốc
-        int xDeltaBasket = 20;     // Tốc độ hiện tại
+        int xDeltaBasketBase = 20;
+        int xDeltaBasket = 20;
 
         // Tọa độ và Tốc độ GÀ
         int xChicken = 300;
         int yChicken = 10;
-        int xDeltaChickenBase = 5; // Tốc độ gốc
-        int xDeltaChicken = 5;     // Tốc độ hiện tại (có thể âm/dương)
+        int xDeltaChickenBase = 5;
+        int xDeltaChicken = 5;
 
         // Tọa độ và Tốc độ TRỨNG
         int xEgg = 300;
         int yEgg = 10;
-        int yDeltaEggBase = 5;     // Tốc độ gốc
-        int yDeltaEgg = 5;         // Tốc độ hiện tại
+        int yDeltaEggBase = 5;
+        int yDeltaEgg = 5;
 
         // Biến quản lý Game
         int score = 0;
         int level = 1;
-        Label lblScore = new Label(); // Hiển thị điểm số
+        Label lblScore = new Label();
 
         public Bai28()
         {
             InitializeComponent();
+
+            // --- CẤU HÌNH FORM ---
+            this.ClientSize = new Size(600, 600);
+            this.Text = "GAME HỨNG TRỨNG - NÔNG TRẠI VUI VẺ";
+            this.DoubleBuffered = true;
         }
 
         private void Bai28_Load(object sender, EventArgs e)
@@ -53,7 +63,7 @@ namespace WinFormsApp_Article
 
             // Setup GIỎ
             pbBasket.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbBasket.Size = new Size(80, 80);
+            pbBasket.Size = new Size(100, 80);
             pbBasket.BackColor = Color.Transparent;
             this.Controls.Add(pbBasket);
 
@@ -72,8 +82,9 @@ namespace WinFormsApp_Article
             // Setup Bảng Điểm
             lblScore.AutoSize = true;
             lblScore.Location = new Point(10, 10);
-            lblScore.Font = new Font("Arial", 12, FontStyle.Bold);
-            lblScore.ForeColor = Color.Red;
+            lblScore.Font = new Font("Arial", 14, FontStyle.Bold);
+            lblScore.ForeColor = Color.White;
+            lblScore.BackColor = Color.Transparent;
             this.Controls.Add(lblScore);
 
             // Load Ảnh
@@ -90,12 +101,15 @@ namespace WinFormsApp_Article
                 pbBasket.Image = Image.FromFile("Images/basket.png");
                 pbEgg.Image = Image.FromFile("Images/egg_gold.png");
                 pbChicken.Image = Image.FromFile("Images/chicken.png");
+                this.BackgroundImage = Image.FromFile("Images/background.png");
+                this.BackgroundImageLayout = ImageLayout.Stretch;
             }
             catch
             {
                 pbBasket.BackColor = Color.Brown;
                 pbEgg.BackColor = Color.Yellow;
                 pbChicken.BackColor = Color.Orange;
+                this.BackColor = Color.SkyBlue;
             }
         }
 
@@ -103,24 +117,30 @@ namespace WinFormsApp_Article
         {
             score = 0;
             level = 1;
-            ResetSpeed(); // Đặt lại tốc độ ban đầu
+            ResetSpeed();
             UpdateScoreBoard();
 
             // Reset vị trí
             xBasket = (this.ClientSize.Width - pbBasket.Width) / 2;
+            yBasket = this.ClientSize.Height - pbBasket.Height - 20;
             pbBasket.Location = new Point(xBasket, yBasket);
 
             ResetEgg();
 
             tmEgg.Start();
             tmChicken.Start();
+
+            // --- BẮT ĐẦU PHÁT NHẠC ---
+            try
+            {
+                bgMusic.PlayLooping(); // Phát lặp lại liên tục
+            }
+            catch { } // Bỏ qua nếu lỗi file nhạc
         }
 
         void ResetSpeed()
         {
-            // Reset về tốc độ cơ bản
             xDeltaBasket = xDeltaBasketBase;
-            // Giữ chiều chuyển động của gà nhưng reset độ lớn vận tốc
             if (xDeltaChicken > 0) xDeltaChicken = xDeltaChickenBase;
             else xDeltaChicken = -xDeltaChickenBase;
             yDeltaEgg = yDeltaEggBase;
@@ -128,23 +148,18 @@ namespace WinFormsApp_Article
 
         void UpdateLevel()
         {
-            // Công thức: Level = 1 + (Điểm / 5)
             int newLevel = 1 + (score / 5);
 
             if (newLevel > level)
             {
                 level = newLevel;
-                // Tăng độ khó:
-                // Tốc độ trứng tăng thêm 5 đơn vị mỗi cấp
-                yDeltaEgg = yDeltaEggBase + (level - 1) * 5;
+                yDeltaEgg = yDeltaEggBase + (level - 1) * 3;
 
-                // Tốc độ gà tăng thêm 2 đơn vị mỗi cấp
                 int speedChicken = xDeltaChickenBase + (level - 1) * 2;
                 if (xDeltaChicken > 0) xDeltaChicken = speedChicken;
                 else xDeltaChicken = -speedChicken;
 
-                // Tốc độ giỏ tăng thêm 10 đơn vị mỗi cấp để kịp bắt trứng
-                xDeltaBasket = xDeltaBasketBase + (level - 1) * 10;
+                xDeltaBasket = xDeltaBasketBase + (level - 1) * 5;
             }
         }
 
@@ -158,24 +173,25 @@ namespace WinFormsApp_Article
             tmEgg.Stop();
             tmChicken.Stop();
 
-            // Đổi ảnh trứng vỡ
+            // --- DỪNG NHẠC KHI CHẾT ---
+            bgMusic.Stop();
+
             try { pbEgg.Image = Image.FromFile("Images/egg_gold_broken.png"); } catch { }
 
             DialogResult res = MessageBox.Show(
-                "GAME OVER!\nĐiểm của bạn: " + score + "\nBạn có muốn chơi lại không?",
-                "Thông báo",
+                "GÀ ĐẺ TRỨNG VÀNG!\nĐiểm của bạn: " + score + "\nBạn có muốn chơi lại không?",
+                "Kết thúc",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (res == DialogResult.Yes)
             {
-                // Chơi lại -> Khôi phục ảnh trứng và reset game
                 try { pbEgg.Image = Image.FromFile("Images/egg_gold.png"); } catch { }
-                StartNewGame();
+                StartNewGame(); // Hàm này sẽ gọi lại nhạc nền
             }
             else
             {
-                this.Close(); // Thoát Form
+                this.Close();
             }
         }
 
@@ -196,14 +212,14 @@ namespace WinFormsApp_Article
         {
             yEgg += yDeltaEgg;
 
-            // A. Kiểm tra va chạm ĐẤY (Thua cuộc)
+            // A. Rơi xuống đất (Thua)
             if (yEgg > this.ClientSize.Height - pbEgg.Height)
             {
                 GameOver();
-                return; // Dừng xử lý tiếp
+                return;
             }
 
-            // B. Kiểm tra va chạm GIỎ (Hứng được)
+            // B. Hứng được (Cộng điểm)
             if (pbEgg.Bounds.IntersectsWith(pbBasket.Bounds))
             {
                 score++;
@@ -218,25 +234,33 @@ namespace WinFormsApp_Article
         void ResetEgg()
         {
             yEgg = yChicken + 50;
-            xEgg = pbChicken.Location.X + 25;
+            xEgg = pbChicken.Location.X + (pbChicken.Width / 2) - (pbEgg.Width / 2);
         }
 
         // --- LOGIC GIỎ (PHÍM BẤM) ---
         private void Bai28_KeyDown(object sender, KeyEventArgs e)
         {
-            // Phím Phải
-            if (e.KeyValue == 39 && (xBasket < this.ClientSize.Width - pbBasket.Width))
+            if (e.KeyCode == Keys.Right && (xBasket < this.ClientSize.Width - pbBasket.Width))
             {
                 xBasket += xDeltaBasket;
             }
 
-            // Phím Trái
-            if (e.KeyValue == 37 && (xBasket > 0))
+            if (e.KeyCode == Keys.Left && (xBasket > 0))
             {
                 xBasket -= xDeltaBasket;
             }
 
             pbBasket.Location = new Point(xBasket, yBasket);
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Left || keyData == Keys.Right)
+            {
+                Bai28_KeyDown(this, new KeyEventArgs(keyData));
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

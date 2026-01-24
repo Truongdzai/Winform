@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D; // Cần thư viện này để vẽ đẹp
 using System.Windows.Forms;
+using System.Media; // <-- 1. Thêm thư viện âm thanh
 
 namespace WinFormsApp_Article
 {
@@ -11,6 +12,10 @@ namespace WinFormsApp_Article
         // --- CẤU HÌNH HỆ THỐNG ---
         System.Windows.Forms.Timer tmGame = new System.Windows.Forms.Timer();
         HashSet<Keys> pressedKeys = new HashSet<Keys>(); // Lưu các phím đang giữ
+
+        // --- KHAI BÁO NHẠC NỀN ---
+        // Lưu ý: File wav phải nằm cùng thư mục với file .exe (bin/Debug/...)
+        SoundPlayer bgMusic = new SoundPlayer("Nhacnengameeasy.wav"); // <-- 2. Khởi tạo nhạc nền
 
         // --- DỮ LIỆU GAME ---
         int deaths = 0;
@@ -43,6 +48,13 @@ namespace WinFormsApp_Article
 
             // Vẽ màn hình
             this.Paint += OnDraw;
+
+            // Bắt đầu phát nhạc nền
+            try
+            {
+                bgMusic.PlayLooping(); // Phát nhạc lặp lại liên tục
+            }
+            catch { } // Bỏ qua nếu không tìm thấy file nhạc
 
             LoadLevel(1);
         }
@@ -91,6 +103,7 @@ namespace WinFormsApp_Article
             else
             {
                 tmGame.Stop();
+                bgMusic.Stop(); // Dừng nhạc khi thắng game
                 MessageBox.Show($"YOU WIN!\nTotal Deaths: {deaths}");
                 this.Close();
             }
