@@ -1,217 +1,274 @@
 ﻿using System;
 using System.Data;
+using Microsoft.Data.SqlClient; // Thư viện truy cập SQL Server hiện đại
 using System.Drawing;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace ADO
 {
     public partial class Form1 : Form
     {
-        // --- CẤU HÌNH KẾT NỐI ---
-        string strCon = @"Data Source=localhost; Initial Catalog=sale; User Id=sa; Password=sa; TrustServerCertificate=True";
-        SqlConnection conn = null;
-        string currentImagePath = "";
-
-        // [QUAN TRỌNG] Biến lưu ID gốc để dùng khi sửa
-        string originalId = "";
+        // Chuỗi kết nối (Vui lòng thay đổi thông số phù hợp với database của bạn)
+        private readonly string strCon = @"Data Source=localhost;Initial Catalog=sale;User Id=sa;Password=sa;TrustServerCertificate=True";
+        private string? currentImagePath = "";
+        private string originalId = string.Empty;
 
         public Form1()
         {
             InitializeComponent();
-            conn = new SqlConnection(strCon);
+            // Thiết lập định dạng ngày tháng hiển thị
             dtpDob.Format = DateTimePickerFormat.Custom;
             dtpDob.CustomFormat = "dd/MM/yyyy";
         }
 
-        private void OpenConnection()
+        #region Phương thức hỗ trợ (Helpers)
+
+        // Kiểm tra mã ID đã tồn tại chưa để tránh lỗi Primary Key
+        private bool IsIdExists(string id)
         {
-            if (conn.State == ConnectionState.Closed) conn.Open();
+            using SqlConnection conn = new SqlConnection(strCon);
+            conn.Open();
+            string sql = "SELECT COUNT(*) FROM customer WHERE id = @id";
+            using SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@id", id);
+            object? result = cmd.ExecuteScalar();
+            return result != null && Convert.ToInt32(result) > 0;
         }
 
-        // --- 1. ĐỌC DỮ LIỆU ---
-        private void btRead_Click(object sender, EventArgs e)
+        // Xóa sạch thông tin trên các ô nhập liệu
+        private void ClearInputs()
         {
+            tbId.Clear();
+            tbName.Clear();
+            tbPhone.Clear();
+            tbSearch.Clear();
+            dtpDob.Value = DateTime.Now;
+            pbAvatar.Image = null;
+            currentImagePath = "";
+            originalId = string.Empty;
+            tbId.Focus();
+        }
+
+        // Tải ảnh vào PictureBox mà không làm khóa file trên ổ cứng
+        private void LoadImageSafely(string? path)
+        {
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+            {
+                try
+                {
+                    using FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+                    pbAvatar.Image = Image.FromStream(fs);
+                    currentImagePath = path;
+                }
+                catch { pbAvatar.Image = null; }
+            }
+            else { pbAvatar.Image = null; }
+        }
+
+        // Kiểm tra tính hợp lệ của dữ liệu đầu vào
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrWhiteSpace(tbId.Text))
+            {
+                MessageBox.Show("Mã khách hàng không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (!int.TryParse(tbId.Text, out _))
+            {
+                MessageBox.Show("Mã khách hàng phải là định dạng số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(tbName.Text))
+            {
+                MessageBox.Show("Họ tên không được rỗng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (!Regex.IsMatch(tbPhone.Text, @"^\d{9,11}$"))
+            {
+                MessageBox.Show("Số điện thoại phải từ 9-11 chữ số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        #endregion
+
+        #region Xử lý Sự kiện
+
+        // Nút "Làm mới" - Tải lại danh sách từ Database
+        private void btRead_Click(object? sender, EventArgs? e)
+        {
+            dgvCustomer.Rows.Clear();
             try
             {
-                OpenConnection();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM customer", conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                dgvCustomer.Rows.Clear();
-
-                while (reader.Read())
+                using SqlConnection conn = new SqlConnection(strCon);
+                conn.Open();
+                using SqlCommand cmd = new SqlCommand("SELECT * FROM customer", conn);
+                using SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
                 {
-                    int id = reader.GetInt32(0);
-                    string name = reader.GetString(1);
-                    string imgPath = reader.IsDBNull(reader.GetOrdinal("ImagePath")) ? "" : reader["ImagePath"].ToString();
-                    DateTime? dob = reader.IsDBNull(reader.GetOrdinal("DateOfBirth")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
-                    string phone = reader.IsDBNull(reader.GetOrdinal("Phone")) ? "" : reader["Phone"].ToString();
-
-                    int index = dgvCustomer.Rows.Add(id, name, dob.HasValue ? dob.Value.ToString("dd/MM/yyyy") : "", phone);
-                    dgvCustomer.Rows[index].Tag = imgPath;
+                    int r = dgvCustomer.Rows.Add(
+                        rd["id"]?.ToString(),
+                        rd["name"]?.ToString(),
+                        rd["DateOfBirth"] != DBNull.Value ? Convert.ToDateTime(rd["DateOfBirth"]).ToString("dd/MM/yyyy") : "",
+                        rd["Phone"]?.ToString()
+                    );
+                    // Lưu đường dẫn ảnh vào Tag để truy xuất khi click dòng
+                    dgvCustomer.Rows[r].Tag = rd["ImagePath"]?.ToString();
                 }
-                reader.Close();
+                ClearInputs();
             }
-            catch (Exception ex) { MessageBox.Show("Lỗi đọc: " + ex.Message); }
-            finally { conn.Close(); }
-        }
-
-        // --- 2. CLICK VÀO LƯỚI (LƯU ID GỐC) ---
-        private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
+            catch (Exception ex)
             {
-                DataGridViewRow row = dgvCustomer.Rows[e.RowIndex];
-
-                // Đổ dữ liệu lên Control
-                tbId.Text = row.Cells[0].Value?.ToString();
-
-                // [QUAN TRỌNG] Lưu lại ID cũ ngay khi click
-                originalId = tbId.Text;
-
-                tbName.Text = row.Cells[1].Value?.ToString();
-
-                if (DateTime.TryParseExact(row.Cells[2].Value?.ToString(), "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dob))
-                    dtpDob.Value = dob;
-
-                tbPhone.Text = row.Cells[3].Value?.ToString();
-
-                string imgPath = row.Tag?.ToString();
-                if (!string.IsNullOrEmpty(imgPath) && File.Exists(imgPath))
-                {
-                    pbAvatar.Image = Image.FromFile(imgPath);
-                    currentImagePath = imgPath;
-                }
-                else
-                {
-                    pbAvatar.Image = null;
-                    currentImagePath = "";
-                }
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        // --- 3. CHỌN ẢNH ---
-        private void btBrowse_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "Image Files|*.jpg;*.jpeg;*.png";
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-                currentImagePath = dlg.FileName;
-                pbAvatar.Image = Image.FromFile(currentImagePath);
-            }
-        }
-
-        // --- 4. THÊM ---
+        // Nút "Thêm mới"
         private void btNew_Click(object sender, EventArgs e)
         {
-            try
+            if (!ValidateInput()) return;
+            if (IsIdExists(tbId.Text))
             {
-                OpenConnection();
-                string sql = "INSERT INTO customer(id, name, DateOfBirth, Phone, ImagePath) VALUES(@id, @name, @dob, @phone, @img)";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-
-                cmd.Parameters.AddWithValue("@id", tbId.Text);
-                cmd.Parameters.AddWithValue("@name", tbName.Text);
-                cmd.Parameters.AddWithValue("@dob", dtpDob.Value);
-                cmd.Parameters.AddWithValue("@phone", tbPhone.Text);
-                cmd.Parameters.AddWithValue("@img", currentImagePath);
-
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm thành công!");
-                btRead_Click(null, null);
-                ResetInput();
-            }
-            catch (Exception ex) { MessageBox.Show("Lỗi thêm (Có thể trùng ID): " + ex.Message); }
-            finally { conn.Close(); }
-        }
-
-        // --- 5. SỬA (CHO PHÉP SỬA ID) ---
-        private void btEdit_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra xem đã chọn dòng nào chưa
-            if (string.IsNullOrEmpty(originalId))
-            {
-                MessageBox.Show("Vui lòng chọn khách hàng cần sửa trong bảng trước!");
+                MessageBox.Show("Mã khách hàng này đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             try
             {
-                OpenConnection();
-                // SQL Logic: Update ID mới WHERE ID cũ
-                string sql = "UPDATE customer SET id=@newId, name=@name, DateOfBirth=@dob, Phone=@phone, ImagePath=@img WHERE id=@oldId";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-
-                cmd.Parameters.AddWithValue("@newId", tbId.Text); // ID Mới (từ TextBox)
-                cmd.Parameters.AddWithValue("@oldId", originalId); // ID Cũ (từ biến lưu trữ)
-
+                using SqlConnection conn = new SqlConnection(strCon);
+                conn.Open();
+                string sql = "INSERT INTO customer (id, name, DateOfBirth, Phone, ImagePath) VALUES (@id, @name, @dob, @phone, @img)";
+                using SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", tbId.Text);
                 cmd.Parameters.AddWithValue("@name", tbName.Text);
                 cmd.Parameters.AddWithValue("@dob", dtpDob.Value);
                 cmd.Parameters.AddWithValue("@phone", tbPhone.Text);
-                cmd.Parameters.AddWithValue("@img", currentImagePath);
+                cmd.Parameters.AddWithValue("@img", (object?)currentImagePath ?? DBNull.Value);
+                cmd.ExecuteNonQuery();
 
-                int result = cmd.ExecuteNonQuery();
-                if (result > 0)
-                {
-                    MessageBox.Show("Cập nhật thành công (Đã đổi ID)!");
-                    btRead_Click(null, null);
-                    ResetInput();
-                }
-                else MessageBox.Show("Không tìm thấy dữ liệu cũ để sửa!");
+                MessageBox.Show("Thêm khách hàng thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btRead_Click(this, EventArgs.Empty);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi cập nhật (ID mới có thể đã tồn tại): " + ex.Message);
-            }
-            finally { conn.Close(); }
+            catch (Exception ex) { MessageBox.Show("Lỗi: " + ex.Message); }
         }
 
-        // --- 6. XÓA ---
+        // Nút "Cập nhật"
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(originalId))
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng từ danh sách!", "Thông báo");
+                return;
+            }
+            if (!ValidateInput()) return;
+            if (tbId.Text != originalId && IsIdExists(tbId.Text))
+            {
+                MessageBox.Show("Mã ID mới đã bị trùng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                using SqlConnection conn = new SqlConnection(strCon);
+                conn.Open();
+                string sql = "UPDATE customer SET id=@newId, name=@name, DateOfBirth=@dob, Phone=@phone, ImagePath=@img WHERE id=@oldId";
+                using SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@newId", tbId.Text);
+                cmd.Parameters.AddWithValue("@oldId", originalId);
+                cmd.Parameters.AddWithValue("@name", tbName.Text);
+                cmd.Parameters.AddWithValue("@dob", dtpDob.Value);
+                cmd.Parameters.AddWithValue("@phone", tbPhone.Text);
+                cmd.Parameters.AddWithValue("@img", (object?)currentImagePath ?? DBNull.Value);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Cập nhật thông tin thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btRead_Click(this, EventArgs.Empty);
+            }
+            catch (Exception ex) { MessageBox.Show("Lỗi: " + ex.Message); }
+        }
+
+        // Nút "Xóa"
         private void btDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (string.IsNullOrEmpty(originalId)) return;
+            if (MessageBox.Show($"Bạn có chắc chắn muốn xóa khách hàng {tbName.Text}?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
+
+            try
             {
-                try
-                {
-                    OpenConnection();
-                    // Khi xóa cũng nên dùng ID cũ để an toàn, hoặc dùng ID từ TextBox nếu chưa sửa
-                    string idToDelete = string.IsNullOrEmpty(originalId) ? tbId.Text : originalId;
-
-                    string sql = "DELETE FROM customer WHERE id=@id";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@id", idToDelete);
-
-                    int result = cmd.ExecuteNonQuery();
-                    if (result > 0)
-                    {
-                        MessageBox.Show("Xóa thành công!");
-                        btRead_Click(null, null);
-                        ResetInput();
-                    }
-                    else MessageBox.Show("Không tìm thấy ID!");
-                }
-                catch (Exception ex) { MessageBox.Show("Lỗi xóa: " + ex.Message); }
-                finally { conn.Close(); }
+                using SqlConnection conn = new SqlConnection(strCon);
+                conn.Open();
+                using SqlCommand cmd = new SqlCommand("DELETE FROM customer WHERE id=@id", conn);
+                cmd.Parameters.AddWithValue("@id", originalId);
+                cmd.ExecuteNonQuery();
+                btRead_Click(this, EventArgs.Empty);
             }
+            catch (Exception ex) { MessageBox.Show("Lỗi xóa: " + ex.Message); }
         }
 
-        private void ResetInput()
+        // Nút "Tìm kiếm"
+        private void btSearch_Click(object sender, EventArgs e)
         {
-            tbId.Text = "";
-            tbName.Text = "";
-            tbPhone.Text = "";
-            pbAvatar.Image = null;
-            currentImagePath = "";
-            dtpDob.Value = DateTime.Now;
-            originalId = ""; // Reset ID gốc
+            dgvCustomer.Rows.Clear();
+            try
+            {
+                using SqlConnection conn = new SqlConnection(strCon);
+                conn.Open();
+                string sql = "SELECT * FROM customer WHERE name LIKE @k OR id LIKE @k OR Phone LIKE @k";
+                using SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@k", "%" + tbSearch.Text.Trim() + "%");
+                using SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    int r = dgvCustomer.Rows.Add(
+                        rd["id"]?.ToString(),
+                        rd["name"]?.ToString(),
+                        rd["DateOfBirth"] != DBNull.Value ? Convert.ToDateTime(rd["DateOfBirth"]).ToString("dd/MM/yyyy") : "",
+                        rd["Phone"]?.ToString()
+                    );
+                    dgvCustomer.Rows[r].Tag = rd["ImagePath"]?.ToString();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Lỗi: " + ex.Message); }
+        }
+
+        // Chọn ảnh từ máy tính
+        private void btBrowse_Click(object sender, EventArgs e)
+        {
+            using OpenFileDialog d = new OpenFileDialog { Filter = "Image Files|*.jpg;*.png;*.bmp" };
+            if (d.ShowDialog() == DialogResult.OK) LoadImageSafely(d.FileName);
         }
 
         private void btExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Thoát chương trình?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Application.Exit();
         }
+
+        // Khi click vào một dòng trong bảng
+        private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            DataGridViewRow r = dgvCustomer.Rows[e.RowIndex];
+            tbId.Text = r.Cells[0].Value?.ToString() ?? "";
+            originalId = tbId.Text; // Lưu lại ID để phục vụ UPDATE/DELETE
+            tbName.Text = r.Cells[1].Value?.ToString() ?? "";
+
+            string? dobStr = r.Cells[2].Value?.ToString();
+            if (!string.IsNullOrEmpty(dobStr) && DateTime.TryParseExact(dobStr, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dob))
+                dtpDob.Value = dob;
+
+            tbPhone.Text = r.Cells[3].Value?.ToString() ?? "";
+            LoadImageSafely(r.Tag?.ToString());
+        }
+
+        // Giữ lại để tránh lỗi thiết kế (Designer)
+        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+
+        private void Form1_Load(object sender, EventArgs e) => btRead_Click(this, EventArgs.Empty);
+
+        #endregion
     }
 }

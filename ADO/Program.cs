@@ -1,3 +1,6 @@
+﻿using System;
+using System.Windows.Forms;
+
 namespace ADO
 {
     internal static class Program
@@ -8,10 +11,14 @@ namespace ADO
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+
+            // 2. Các thiết lập chuẩn giao diện Windows
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            // 3. Chạy LoginForm đầu tiên
+            Application.Run(new LoginForm());
         }
     }
 }
