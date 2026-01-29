@@ -6,8 +6,7 @@
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-                components.Dispose();
+            if (disposing && (components != null)) components.Dispose();
             base.Dispose(disposing);
         }
 
@@ -15,22 +14,26 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             btRead = new Button();
             btNew = new Button();
             btEdit = new Button();
             btDelete = new Button();
             btExit = new Button();
             btSearch = new Button();
+            btExport = new Button();
             tbSearch = new TextBox();
             label5 = new Label();
             dgvCustomer = new DataGridView();
             colId = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
+            colGender = new DataGridViewTextBoxColumn();
             colDob = new DataGridViewTextBoxColumn();
             colPhone = new DataGridViewTextBoxColumn();
             gbInfo = new GroupBox();
+            label6 = new Label();
+            cbGender = new ComboBox();
             btBrowse = new Button();
             pbAvatar = new PictureBox();
             label4 = new Label();
@@ -44,37 +47,232 @@
             gbList = new GroupBox();
             panelHeader = new Panel();
             labelTitle = new Label();
+            panelPagination = new Panel();
+            btFirst = new Button();
+            btPrev = new Button();
+            lblPageInfo = new Label();
+            btNext = new Button();
+            btLast = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCustomer).BeginInit();
             gbInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAvatar).BeginInit();
             gbList.SuspendLayout();
             panelHeader.SuspendLayout();
+            panelPagination.SuspendLayout();
             SuspendLayout();
             // 
-            // panelHeader
+            // btRead
             // 
-            panelHeader.BackColor = Color.FromArgb(37, 99, 235);
-            panelHeader.Controls.Add(labelTitle);
-            panelHeader.Dock = DockStyle.Top;
-            panelHeader.Location = new Point(0, 0);
-            panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1100, 60);
-            panelHeader.TabIndex = 10;
+            btRead.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btRead.BackColor = Color.FromArgb(37, 99, 235);
+            btRead.FlatAppearance.BorderSize = 0;
+            btRead.FlatStyle = FlatStyle.Flat;
+            btRead.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btRead.ForeColor = Color.White;
+            btRead.Location = new Point(472, 576);
+            btRead.Name = "btRead";
+            btRead.Size = new Size(100, 40);
+            btRead.TabIndex = 5;
+            btRead.Text = "LÀM MỚI";
+            btRead.UseVisualStyleBackColor = false;
+            btRead.Click += btRead_Click;
             // 
-            // labelTitle
+            // btNew
             // 
-            labelTitle.AutoSize = true;
-            labelTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            labelTitle.ForeColor = Color.White;
-            labelTitle.Location = new Point(20, 15);
-            labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(322, 37);
-            labelTitle.TabIndex = 0;
-            labelTitle.Text = "QUẢN LÝ KHÁCH HÀNG";
+            btNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btNew.BackColor = Color.FromArgb(22, 163, 74);
+            btNew.FlatAppearance.BorderSize = 0;
+            btNew.FlatStyle = FlatStyle.Flat;
+            btNew.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btNew.ForeColor = Color.White;
+            btNew.Location = new Point(597, 576);
+            btNew.Name = "btNew";
+            btNew.Size = new Size(100, 40);
+            btNew.TabIndex = 6;
+            btNew.Text = "THÊM MỚI";
+            btNew.UseVisualStyleBackColor = false;
+            btNew.Click += btNew_Click;
+            // 
+            // btEdit
+            // 
+            btEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btEdit.BackColor = Color.FromArgb(234, 179, 8);
+            btEdit.FlatAppearance.BorderSize = 0;
+            btEdit.FlatStyle = FlatStyle.Flat;
+            btEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btEdit.ForeColor = Color.White;
+            btEdit.Location = new Point(722, 576);
+            btEdit.Name = "btEdit";
+            btEdit.Size = new Size(100, 40);
+            btEdit.TabIndex = 7;
+            btEdit.Text = "CẬP NHẬT";
+            btEdit.UseVisualStyleBackColor = false;
+            btEdit.Click += btEdit_Click;
+            // 
+            // btDelete
+            // 
+            btDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btDelete.BackColor = Color.FromArgb(220, 38, 38);
+            btDelete.FlatAppearance.BorderSize = 0;
+            btDelete.FlatStyle = FlatStyle.Flat;
+            btDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btDelete.ForeColor = Color.White;
+            btDelete.Location = new Point(850, 576);
+            btDelete.Name = "btDelete";
+            btDelete.Size = new Size(100, 40);
+            btDelete.TabIndex = 8;
+            btDelete.Text = "XÓA BỎ";
+            btDelete.UseVisualStyleBackColor = false;
+            btDelete.Click += btDelete_Click;
+            // 
+            // btExit
+            // 
+            btExit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btExit.BackColor = Color.FromArgb(148, 163, 184);
+            btExit.FlatAppearance.BorderSize = 0;
+            btExit.FlatStyle = FlatStyle.Flat;
+            btExit.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btExit.ForeColor = Color.White;
+            btExit.Location = new Point(980, 576);
+            btExit.Name = "btExit";
+            btExit.Size = new Size(90, 40);
+            btExit.TabIndex = 9;
+            btExit.Text = "THOÁT";
+            btExit.UseVisualStyleBackColor = false;
+            btExit.Click += btExit_Click;
+            // 
+            // btSearch
+            // 
+            btSearch.BackColor = Color.FromArgb(51, 65, 85);
+            btSearch.FlatAppearance.BorderSize = 0;
+            btSearch.FlatStyle = FlatStyle.Flat;
+            btSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btSearch.ForeColor = Color.White;
+            btSearch.Location = new Point(810, 80);
+            btSearch.Name = "btSearch";
+            btSearch.Size = new Size(100, 30);
+            btSearch.TabIndex = 2;
+            btSearch.Text = "TÌM KIẾM";
+            btSearch.UseVisualStyleBackColor = false;
+            btSearch.Click += btSearch_Click;
+            // 
+            // btExport
+            // 
+            btExport.BackColor = Color.FromArgb(16, 185, 129);
+            btExport.FlatAppearance.BorderSize = 0;
+            btExport.FlatStyle = FlatStyle.Flat;
+            btExport.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btExport.ForeColor = Color.White;
+            btExport.Location = new Point(920, 80);
+            btExport.Name = "btExport";
+            btExport.Size = new Size(100, 30);
+            btExport.TabIndex = 11;
+            btExport.Text = "XUẤT EXCEL";
+            btExport.UseVisualStyleBackColor = false;
+            btExport.Click += btExport_Click;
+            // 
+            // tbSearch
+            // 
+            tbSearch.Font = new Font("Segoe UI", 10F);
+            tbSearch.Location = new Point(445, 80);
+            tbSearch.Name = "tbSearch";
+            tbSearch.PlaceholderText = "Nhập tên, số điện thoại hoặc mã...";
+            tbSearch.Size = new Size(350, 30);
+            tbSearch.TabIndex = 1;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label5.ForeColor = Color.FromArgb(71, 85, 105);
+            label5.Location = new Point(360, 85);
+            label5.Name = "label5";
+            label5.Size = new Size(78, 20);
+            label5.TabIndex = 0;
+            label5.Text = "Tìm kiếm:";
+            // 
+            // dgvCustomer
+            // 
+            dgvCustomer.AllowUserToAddRows = false;
+            dgvCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCustomer.BackgroundColor = Color.White;
+            dgvCustomer.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(248, 250, 252);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(248, 250, 252);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgvCustomer.ColumnHeadersHeight = 40;
+            dgvCustomer.Columns.AddRange(new DataGridViewColumn[] { colId, colName, colGender, colDob, colPhone });
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 85, 105);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(219, 234, 254);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(30, 64, 175);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvCustomer.DefaultCellStyle = dataGridViewCellStyle6;
+            dgvCustomer.Dock = DockStyle.Fill;
+            dgvCustomer.EnableHeadersVisualStyles = false;
+            dgvCustomer.GridColor = Color.FromArgb(241, 245, 249);
+            dgvCustomer.Location = new Point(3, 26);
+            dgvCustomer.MultiSelect = false;
+            dgvCustomer.Name = "dgvCustomer";
+            dgvCustomer.ReadOnly = true;
+            dgvCustomer.RowHeadersVisible = false;
+            dgvCustomer.RowHeadersWidth = 51;
+            dgvCustomer.RowTemplate.Height = 35;
+            dgvCustomer.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCustomer.Size = new Size(704, 371);
+            dgvCustomer.TabIndex = 0;
+            dgvCustomer.CellClick += dgvCustomer_CellClick;
+            // 
+            // colId
+            // 
+            colId.FillWeight = 50F;
+            colId.HeaderText = "ID";
+            colId.MinimumWidth = 50;
+            colId.Name = "colId";
+            colId.ReadOnly = true;
+            // 
+            // colName
+            // 
+            colName.FillWeight = 150F;
+            colName.HeaderText = "HỌ TÊN";
+            colName.MinimumWidth = 100;
+            colName.Name = "colName";
+            colName.ReadOnly = true;
+            // 
+            // colGender
+            // 
+            colGender.FillWeight = 70F;
+            colGender.HeaderText = "GIỚI TÍNH";
+            colGender.MinimumWidth = 50;
+            colGender.Name = "colGender";
+            colGender.ReadOnly = true;
+            // 
+            // colDob
+            // 
+            colDob.HeaderText = "NGÀY SINH";
+            colDob.MinimumWidth = 100;
+            colDob.Name = "colDob";
+            colDob.ReadOnly = true;
+            // 
+            // colPhone
+            // 
+            colPhone.HeaderText = "SĐT";
+            colPhone.MinimumWidth = 100;
+            colPhone.Name = "colPhone";
+            colPhone.ReadOnly = true;
             // 
             // gbInfo
             // 
             gbInfo.BackColor = Color.White;
+            gbInfo.Controls.Add(label6);
+            gbInfo.Controls.Add(cbGender);
             gbInfo.Controls.Add(btBrowse);
             gbInfo.Controls.Add(pbAvatar);
             gbInfo.Controls.Add(label4);
@@ -94,17 +292,38 @@
             gbInfo.TabStop = false;
             gbInfo.Text = "Thông Tin Chi Tiết";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F);
+            label6.Location = new Point(20, 170);
+            label6.Name = "label6";
+            label6.Size = new Size(68, 20);
+            label6.TabIndex = 10;
+            label6.Text = "Giới tính:";
+            // 
+            // cbGender
+            // 
+            cbGender.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbGender.Font = new Font("Segoe UI", 10F);
+            cbGender.FormattingEnabled = true;
+            cbGender.Items.AddRange(new object[] { "Nam", "Nữ", "Gay" });
+            cbGender.Location = new Point(20, 195);
+            cbGender.Name = "cbGender";
+            cbGender.Size = new Size(280, 31);
+            cbGender.TabIndex = 2;
+            // 
             // btBrowse
             // 
             btBrowse.BackColor = Color.FromArgb(226, 232, 240);
             btBrowse.FlatAppearance.BorderSize = 0;
             btBrowse.FlatStyle = FlatStyle.Flat;
             btBrowse.Font = new Font("Segoe UI", 9F);
-            btBrowse.Location = new Point(90, 430);
+            btBrowse.Location = new Point(90, 465);
             btBrowse.Name = "btBrowse";
             btBrowse.Size = new Size(140, 30);
             btBrowse.TabIndex = 9;
-            btBrowse.Text = "Chọn hình ảnh";
+            btBrowse.Text = "Chọn ảnh";
             btBrowse.UseVisualStyleBackColor = false;
             btBrowse.Click += btBrowse_Click;
             // 
@@ -112,9 +331,9 @@
             // 
             pbAvatar.BackColor = Color.FromArgb(241, 245, 249);
             pbAvatar.BorderStyle = BorderStyle.FixedSingle;
-            pbAvatar.Location = new Point(90, 240);
+            pbAvatar.Location = new Point(90, 305);
             pbAvatar.Name = "pbAvatar";
-            pbAvatar.Size = new Size(140, 180);
+            pbAvatar.Size = new Size(140, 150);
             pbAvatar.SizeMode = PictureBoxSizeMode.Zoom;
             pbAvatar.TabIndex = 8;
             pbAvatar.TabStop = false;
@@ -123,7 +342,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F);
-            label4.Location = new Point(170, 170);
+            label4.Location = new Point(170, 235);
             label4.Name = "label4";
             label4.Size = new Size(100, 20);
             label4.TabIndex = 6;
@@ -132,7 +351,7 @@
             // tbPhone
             // 
             tbPhone.Font = new Font("Segoe UI", 10F);
-            tbPhone.Location = new Point(170, 195);
+            tbPhone.Location = new Point(170, 260);
             tbPhone.Name = "tbPhone";
             tbPhone.Size = new Size(130, 30);
             tbPhone.TabIndex = 7;
@@ -141,7 +360,7 @@
             // 
             dtpDob.Font = new Font("Segoe UI", 10F);
             dtpDob.Format = DateTimePickerFormat.Short;
-            dtpDob.Location = new Point(20, 195);
+            dtpDob.Location = new Point(20, 260);
             dtpDob.Name = "dtpDob";
             dtpDob.Size = new Size(130, 30);
             dtpDob.TabIndex = 5;
@@ -150,7 +369,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F);
-            label3.Location = new Point(20, 170);
+            label3.Location = new Point(20, 235);
             label3.Name = "label3";
             label3.Size = new Size(77, 20);
             label3.TabIndex = 4;
@@ -205,195 +424,101 @@
             gbList.TabStop = false;
             gbList.Text = "Danh Sách Khách Hàng";
             // 
-            // dgvCustomer
+            // panelHeader
             // 
-            dgvCustomer.AllowUserToAddRows = false;
-            dgvCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvCustomer.BackgroundColor = Color.White;
-            dgvCustomer.BorderStyle = BorderStyle.None;
-            dgvCustomer.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvCustomer.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(248, 250, 252);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(248, 250, 252);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvCustomer.ColumnHeadersHeight = 40;
-            dgvCustomer.Columns.AddRange(new DataGridViewColumn[] { colId, colName, colDob, colPhone });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(71, 85, 105);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(219, 234, 254);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(30, 64, 175);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvCustomer.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvCustomer.Dock = DockStyle.Fill;
-            dgvCustomer.EnableHeadersVisualStyles = false;
-            dgvCustomer.GridColor = Color.FromArgb(241, 245, 249);
-            dgvCustomer.Location = new Point(3, 26);
-            dgvCustomer.MultiSelect = false;
-            dgvCustomer.Name = "dgvCustomer";
-            dgvCustomer.ReadOnly = true;
-            dgvCustomer.RowHeadersVisible = false;
-            dgvCustomer.RowHeadersWidth = 51;
-            dgvCustomer.RowTemplate.Height = 35;
-            dgvCustomer.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCustomer.Size = new Size(704, 371);
-            dgvCustomer.TabIndex = 0;
-            dgvCustomer.CellClick += dgvCustomer_CellClick;
-            dgvCustomer.CellContentClick += dgvCustomer_CellContentClick;
+            panelHeader.BackColor = Color.FromArgb(37, 99, 235);
+            panelHeader.Controls.Add(labelTitle);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Size = new Size(1100, 60);
+            panelHeader.TabIndex = 10;
             // 
-            // colId
+            // labelTitle
             // 
-            colId.HeaderText = "ID";
-            colId.Name = "colId";
-            colId.ReadOnly = true;
+            labelTitle.AutoSize = true;
+            labelTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            labelTitle.ForeColor = Color.White;
+            labelTitle.Location = new Point(20, 15);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(323, 37);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "QUẢN LÝ KHÁCH HÀNG";
             // 
-            // colName
+            // panelPagination
             // 
-            colName.HeaderText = "HỌ TÊN";
-            colName.Name = "colName";
-            colName.ReadOnly = true;
+            panelPagination.BackColor = Color.WhiteSmoke;
+            panelPagination.Controls.Add(btFirst);
+            panelPagination.Controls.Add(btPrev);
+            panelPagination.Controls.Add(lblPageInfo);
+            panelPagination.Controls.Add(btNext);
+            panelPagination.Controls.Add(btLast);
+            panelPagination.Location = new Point(360, 530);
+            panelPagination.Name = "panelPagination";
+            panelPagination.Size = new Size(710, 40);
+            panelPagination.TabIndex = 18;
             // 
-            // colDob
+            // btFirst
             // 
-            colDob.HeaderText = "NGÀY SINH";
-            colDob.Name = "colDob";
-            colDob.ReadOnly = true;
+            btFirst.Location = new Point(200, 5);
+            btFirst.Name = "btFirst";
+            btFirst.Size = new Size(50, 30);
+            btFirst.TabIndex = 0;
+            btFirst.Text = "|<";
+            btFirst.UseVisualStyleBackColor = true;
+            btFirst.Click += btFirst_Click;
             // 
-            // colPhone
+            // btPrev
             // 
-            colPhone.HeaderText = "SỐ ĐIỆN THOẠI";
-            colPhone.Name = "colPhone";
-            colPhone.ReadOnly = true;
+            btPrev.Location = new Point(260, 5);
+            btPrev.Name = "btPrev";
+            btPrev.Size = new Size(50, 30);
+            btPrev.TabIndex = 1;
+            btPrev.Text = "<<";
+            btPrev.UseVisualStyleBackColor = true;
+            btPrev.Click += btPrev_Click;
             // 
-            // label5
+            // lblPageInfo
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label5.ForeColor = Color.FromArgb(71, 85, 105);
-            label5.Location = new Point(360, 85);
-            label5.Name = "label5";
-            label5.Size = new Size(78, 20);
-            label5.TabIndex = 0;
-            label5.Text = "Tìm kiếm:";
+            lblPageInfo.Location = new Point(320, 5);
+            lblPageInfo.Name = "lblPageInfo";
+            lblPageInfo.Size = new Size(100, 30);
+            lblPageInfo.TabIndex = 2;
+            lblPageInfo.Text = "0 / 0";
+            lblPageInfo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tbSearch
+            // btNext
             // 
-            tbSearch.Font = new Font("Segoe UI", 10F);
-            tbSearch.Location = new Point(445, 80);
-            tbSearch.Name = "tbSearch";
-            tbSearch.PlaceholderText = "Nhập tên hoặc mã để tìm...";
-            tbSearch.Size = new Size(400, 30);
-            tbSearch.TabIndex = 1;
+            btNext.Location = new Point(430, 5);
+            btNext.Name = "btNext";
+            btNext.Size = new Size(50, 30);
+            btNext.TabIndex = 3;
+            btNext.Text = ">>";
+            btNext.UseVisualStyleBackColor = true;
+            btNext.Click += btNext_Click;
             // 
-            // btSearch
+            // btLast
             // 
-            btSearch.BackColor = Color.FromArgb(51, 65, 85);
-            btSearch.FlatAppearance.BorderSize = 0;
-            btSearch.FlatStyle = FlatStyle.Flat;
-            btSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btSearch.ForeColor = Color.White;
-            btSearch.Location = new Point(855, 80);
-            btSearch.Name = "btSearch";
-            btSearch.Size = new Size(100, 30);
-            btSearch.TabIndex = 2;
-            btSearch.Text = "TÌM KIẾM";
-            btSearch.UseVisualStyleBackColor = false;
-            btSearch.Click += btSearch_Click;
-            // 
-            // btRead
-            // 
-            btRead.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btRead.BackColor = Color.FromArgb(37, 99, 235);
-            btRead.FlatAppearance.BorderSize = 0;
-            btRead.FlatStyle = FlatStyle.Flat;
-            btRead.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btRead.ForeColor = Color.White;
-            btRead.Location = new Point(550, 545);
-            btRead.Name = "btRead";
-            btRead.Size = new Size(100, 40);
-            btRead.TabIndex = 5;
-            btRead.Text = "LÀM MỚI";
-            btRead.UseVisualStyleBackColor = false;
-            btRead.Click += btRead_Click;
-            // 
-            // btNew
-            // 
-            btNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btNew.BackColor = Color.FromArgb(22, 163, 74);
-            btNew.FlatAppearance.BorderSize = 0;
-            btNew.FlatStyle = FlatStyle.Flat;
-            btNew.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btNew.ForeColor = Color.White;
-            btNew.Location = new Point(660, 545);
-            btNew.Name = "btNew";
-            btNew.Size = new Size(100, 40);
-            btNew.TabIndex = 6;
-            btNew.Text = "THÊM MỚI";
-            btNew.UseVisualStyleBackColor = false;
-            btNew.Click += btNew_Click;
-            // 
-            // btEdit
-            // 
-            btEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btEdit.BackColor = Color.FromArgb(234, 179, 8);
-            btEdit.FlatAppearance.BorderSize = 0;
-            btEdit.FlatStyle = FlatStyle.Flat;
-            btEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btEdit.ForeColor = Color.White;
-            btEdit.Location = new Point(770, 545);
-            btEdit.Name = "btEdit";
-            btEdit.Size = new Size(100, 40);
-            btEdit.TabIndex = 7;
-            btEdit.Text = "CẬP NHẬT";
-            btEdit.UseVisualStyleBackColor = false;
-            btEdit.Click += btEdit_Click;
-            // 
-            // btDelete
-            // 
-            btDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btDelete.BackColor = Color.FromArgb(220, 38, 38);
-            btDelete.FlatAppearance.BorderSize = 0;
-            btDelete.FlatStyle = FlatStyle.Flat;
-            btDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btDelete.ForeColor = Color.White;
-            btDelete.Location = new Point(880, 545);
-            btDelete.Name = "btDelete";
-            btDelete.Size = new Size(100, 40);
-            btDelete.TabIndex = 8;
-            btDelete.Text = "XÓA BỎ";
-            btDelete.UseVisualStyleBackColor = false;
-            btDelete.Click += btDelete_Click;
-            // 
-            // btExit
-            // 
-            btExit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btExit.BackColor = Color.FromArgb(148, 163, 184);
-            btExit.FlatAppearance.BorderSize = 0;
-            btExit.FlatStyle = FlatStyle.Flat;
-            btExit.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btExit.ForeColor = Color.White;
-            btExit.Location = new Point(990, 545);
-            btExit.Name = "btExit";
-            btExit.Size = new Size(90, 40);
-            btExit.TabIndex = 9;
-            btExit.Text = "THOÁT";
-            btExit.UseVisualStyleBackColor = false;
-            btExit.Click += btExit_Click;
+            btLast.Location = new Point(490, 5);
+            btLast.Name = "btLast";
+            btLast.Size = new Size(50, 30);
+            btLast.TabIndex = 4;
+            btLast.Text = ">|";
+            btLast.UseVisualStyleBackColor = true;
+            btLast.Click += btLast_Click;
             // 
             // Form1
             // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 250, 252);
             ClientSize = new Size(1100, 620);
+            Controls.Add(panelPagination);
             Controls.Add(panelHeader);
             Controls.Add(label5);
             Controls.Add(tbSearch);
             Controls.Add(btSearch);
+            Controls.Add(btExport);
             Controls.Add(gbInfo);
             Controls.Add(gbList);
             Controls.Add(btRead);
@@ -415,20 +540,25 @@
             gbList.ResumeLayout(false);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
+            panelPagination.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
+
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btRead, btNew, btEdit, btDelete, btExit, btBrowse, btSearch;
+        private System.Windows.Forms.Button btRead, btNew, btEdit, btDelete, btExit, btBrowse, btSearch, btExport;
         private System.Windows.Forms.TextBox tbId, tbName, tbPhone, tbSearch;
         private System.Windows.Forms.DateTimePicker dtpDob;
         private System.Windows.Forms.PictureBox pbAvatar;
         private System.Windows.Forms.DataGridView dgvCustomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId, colName, colDob, colPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId, colName, colGender, colDob, colPhone;
         private System.Windows.Forms.GroupBox gbInfo, gbList;
-        private System.Windows.Forms.Label label1, label2, label3, label4, label5, labelTitle;
-        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Label label1, label2, label3, label4, label5, label6, labelTitle;
+        private System.Windows.Forms.ComboBox cbGender;
+        private System.Windows.Forms.Panel panelHeader, panelPagination;
+        private System.Windows.Forms.Button btFirst, btPrev, btNext, btLast;
+        private System.Windows.Forms.Label lblPageInfo;
     }
 }

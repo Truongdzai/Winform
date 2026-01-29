@@ -10,6 +10,8 @@
             base.Dispose(disposing);
         }
 
+        #region Windows Form Designer generated code
+
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,9 +40,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.btSearch = new System.Windows.Forms.Button();
+            this.btExport = new System.Windows.Forms.Button();
+            this.btImport = new System.Windows.Forms.Button();
+            this.panelPagination = new System.Windows.Forms.Panel();
+            this.btFirst = new System.Windows.Forms.Button();
+            this.btPrev = new System.Windows.Forms.Button();
+            this.lblPageInfo = new System.Windows.Forms.Label();
+            this.btNext = new System.Windows.Forms.Button();
+            this.btLast = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProduct)).BeginInit();
+            this.panelPagination.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -153,32 +164,36 @@
             this.dgvProduct.RowHeadersWidth = 51;
             this.dgvProduct.RowTemplate.Height = 35;
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduct.Size = new System.Drawing.Size(780, 250);
+            this.dgvProduct.Size = new System.Drawing.Size(880, 250);
             this.dgvProduct.TabIndex = 12;
             this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
             // 
             // colId
             // 
             this.colId.HeaderText = "Mã SP";
-            this.colId.Name = "id";
+            this.colId.MinimumWidth = 6;
+            this.colId.Name = "colId";
             this.colId.ReadOnly = true;
             // 
             // colName
             // 
             this.colName.HeaderText = "Tên Sản Phẩm";
-            this.colName.Name = "name";
+            this.colName.MinimumWidth = 6;
+            this.colName.Name = "colName";
             this.colName.ReadOnly = true;
             // 
             // colPrice
             // 
             this.colPrice.HeaderText = "Đơn Giá";
-            this.colPrice.Name = "price";
+            this.colPrice.MinimumWidth = 6;
+            this.colPrice.Name = "colPrice";
             this.colPrice.ReadOnly = true;
             // 
             // colUnit
             // 
             this.colUnit.HeaderText = "Đơn Vị";
-            this.colUnit.Name = "unit";
+            this.colUnit.MinimumWidth = 6;
+            this.colUnit.Name = "colUnit";
             this.colUnit.ReadOnly = true;
             // 
             // btAdd
@@ -259,14 +274,14 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(850, 60);
+            this.panelHeader.Size = new System.Drawing.Size(950, 60);
             this.panelHeader.TabIndex = 13;
             // 
             // pbProduct
             // 
             this.pbProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.pbProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbProduct.Location = new System.Drawing.Point(620, 80);
+            this.pbProduct.Location = new System.Drawing.Point(730, 80);
             this.pbProduct.Name = "pbProduct";
             this.pbProduct.Size = new System.Drawing.Size(180, 200);
             this.pbProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -279,7 +294,7 @@
             this.btBrowse.FlatAppearance.BorderSize = 0;
             this.btBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btBrowse.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btBrowse.Location = new System.Drawing.Point(620, 290);
+            this.btBrowse.Location = new System.Drawing.Point(730, 290);
             this.btBrowse.Name = "btBrowse";
             this.btBrowse.Size = new System.Drawing.Size(180, 30);
             this.btBrowse.TabIndex = 10;
@@ -322,10 +337,108 @@
             this.btSearch.UseVisualStyleBackColor = false;
             this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
+            // btExport
+            // 
+            this.btExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
+            this.btExport.FlatAppearance.BorderSize = 0;
+            this.btExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btExport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btExport.ForeColor = System.Drawing.Color.White;
+            this.btExport.Location = new System.Drawing.Point(480, 77);
+            this.btExport.Name = "btExport";
+            this.btExport.Size = new System.Drawing.Size(110, 30);
+            this.btExport.TabIndex = 16;
+            this.btExport.Text = "XUẤT EXCEL";
+            this.btExport.UseVisualStyleBackColor = false;
+            this.btExport.Click += new System.EventHandler(this.btExport_Click);
+            // 
+            // btImport
+            // 
+            this.btImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(237)))));
+            this.btImport.FlatAppearance.BorderSize = 0;
+            this.btImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btImport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btImport.ForeColor = System.Drawing.Color.White;
+            this.btImport.Location = new System.Drawing.Point(600, 77);
+            this.btImport.Name = "btImport";
+            this.btImport.Size = new System.Drawing.Size(110, 30);
+            this.btImport.TabIndex = 17;
+            this.btImport.Text = "NHẬP EXCEL";
+            this.btImport.UseVisualStyleBackColor = false;
+            this.btImport.Click += new System.EventHandler(this.btImport_Click);
+            // 
+            // panelPagination
+            // 
+            this.panelPagination.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelPagination.Controls.Add(this.btFirst);
+            this.panelPagination.Controls.Add(this.btPrev);
+            this.panelPagination.Controls.Add(this.lblPageInfo);
+            this.panelPagination.Controls.Add(this.btNext);
+            this.panelPagination.Controls.Add(this.btLast);
+            this.panelPagination.Location = new System.Drawing.Point(30, 600);
+            this.panelPagination.Name = "panelPagination";
+            this.panelPagination.Size = new System.Drawing.Size(880, 40);
+            this.panelPagination.TabIndex = 18;
+            // 
+            // btFirst
+            // 
+            this.btFirst.Location = new System.Drawing.Point(250, 5);
+            this.btFirst.Name = "btFirst";
+            this.btFirst.Size = new System.Drawing.Size(50, 30);
+            this.btFirst.TabIndex = 0;
+            this.btFirst.Text = "|<";
+            this.btFirst.UseVisualStyleBackColor = true;
+            this.btFirst.Click += new System.EventHandler(this.btFirst_Click);
+            // 
+            // btPrev
+            // 
+            this.btPrev.Location = new System.Drawing.Point(310, 5);
+            this.btPrev.Name = "btPrev";
+            this.btPrev.Size = new System.Drawing.Size(50, 30);
+            this.btPrev.TabIndex = 1;
+            this.btPrev.Text = "<<";
+            this.btPrev.UseVisualStyleBackColor = true;
+            this.btPrev.Click += new System.EventHandler(this.btPrev_Click);
+            // 
+            // lblPageInfo
+            // 
+            this.lblPageInfo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblPageInfo.Location = new System.Drawing.Point(370, 5);
+            this.lblPageInfo.Name = "lblPageInfo";
+            this.lblPageInfo.Size = new System.Drawing.Size(140, 30);
+            this.lblPageInfo.TabIndex = 2;
+            this.lblPageInfo.Text = "Trang 0 / 0";
+            this.lblPageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btNext
+            // 
+            this.btNext.Location = new System.Drawing.Point(520, 5);
+            this.btNext.Name = "btNext";
+            this.btNext.Size = new System.Drawing.Size(50, 30);
+            this.btNext.TabIndex = 3;
+            this.btNext.Text = ">>";
+            this.btNext.UseVisualStyleBackColor = true;
+            this.btNext.Click += new System.EventHandler(this.btNext_Click);
+            // 
+            // btLast
+            // 
+            this.btLast.Location = new System.Drawing.Point(580, 5);
+            this.btLast.Name = "btLast";
+            this.btLast.Size = new System.Drawing.Size(50, 30);
+            this.btLast.TabIndex = 4;
+            this.btLast.Text = ">|";
+            this.btLast.UseVisualStyleBackColor = true;
+            this.btLast.Click += new System.EventHandler(this.btLast_Click);
+            // 
             // ProductForm
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(850, 620);
+            this.ClientSize = new System.Drawing.Size(950, 660);
+            this.Controls.Add(this.panelPagination);
+            this.Controls.Add(this.btImport);
+            this.Controls.Add(this.btExport);
             this.Controls.Add(this.btSearch);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.label5);
@@ -355,19 +468,23 @@
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProduct)).EndInit();
+            this.panelPagination.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
+
+        #endregion
 
         private System.Windows.Forms.Label label1, label2, label3, label4, labelTitle, label5;
         private System.Windows.Forms.TextBox tbId, tbName, tbPrice, tbUnit, tbSearch;
         private System.Windows.Forms.DataGridView dgvProduct;
-        private System.Windows.Forms.Button btAdd, btEdit, btDelete, btClose, btBrowse, btSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId, colName, colPrice, colUnit;
+        private System.Windows.Forms.Button btAdd, btEdit, btDelete, btClose, btBrowse, btSearch, btExport, btImport;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.PictureBox pbProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUnit;
+        private System.Windows.Forms.Panel panelPagination;
+        private System.Windows.Forms.Button btFirst, btPrev, btNext, btLast;
+        private System.Windows.Forms.Label lblPageInfo;
     }
 }
